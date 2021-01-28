@@ -21,14 +21,14 @@ TBD
 
 ## Quality Attribute Analysis
 
-| Quality Attribute | Reason |
-| ----------- | ----------- |
-| Availability - H | The platform's main purpose is to provide aid in the learning process, so it should be available as much as possible. It should not fail the student when he needs it. |
-| Performance - H | When a student is learning, it is important not to lose focus. So, the platform's search function should work as quickly as possible. |
-| Portability - L | As the majority of quality studying is done in front of a desk, the software architecture should be designed for desktop computers (Windows PC, Mac OS). |
-| Security - M | The main function - searching - only retrieves data, which is not dangerous. But uploading and transcript editing should be done only by authorized personnel. The software should provide that. |
-Scalability - H | As this platform is basically a database, any kind of expansion (most likely vertical) should be seamless and unnoticed by the user.
-| Testability - M | The functionality is quite simple and input methods are limited. The upload formats (video and audio) are also limited. The only functionality that should be tested thoroughly is the transcript generation. |
+| Quality Attribute | Priority | Reason |
+| ----------- | ----------- | ----------- |
+| Availability | H | The platform's main purpose is to provide aid in the learning process, so it should be available as much as possible. It should not fail the student when he needs it. |
+| Performance | H | When a student is learning, it is important not to lose focus. So, the platform's search function should work as quickly as possible. |
+| Portability | L | As the majority of quality studying is done in front of a desk, the software architecture should be designed for desktop computers (Windows PC, Mac OS). |
+| Security | M | The main function - searching - only retrieves data, which is not dangerous. But uploading and transcript editing should be done only by authorized personnel. The software should provide that. |
+| Scalability | H | As this platform is basically a database, any kind of expansion (most likely vertical) should be seamless and unnoticed by the user.
+| Testability | M | The functionality is quite simple and input methods are limited. The upload formats (video and audio) are also limited. The only functionality that should be tested thoroughly is the transcript generation. |
 
 ## Team Responsibilites
 
