@@ -4,7 +4,7 @@
 
 2. Fathima Shafana (121985)
 
-3. Htoo Lwin (leader) (120832)
+3. Htoo Lwin (Leader) (120832)
 
 # Project Topic
 
@@ -50,7 +50,7 @@ Issue tracker: TBD
 
 ## Timetable
 
-TBD
+!(https://github.com/AdamHtooLwin/control-ef/blob/master/Project%20Plan.PNG)
 
 ## Progress
 
