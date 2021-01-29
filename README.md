@@ -50,7 +50,7 @@ Issue tracker: TBD
 
 ## Timetable
 
-!(https://github.com/AdamHtooLwin/control-ef/blob/master/Project%20Plan.PNG)
+![Project Plan](https://github.com/AdamHtooLwin/control-ef/blob/master/Project%20Plan.PNG?raw=true)
 
 ## Progress
 
