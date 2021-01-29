@@ -8,7 +8,7 @@
 
 # Project Topic
 
-## Ctrl+VID (or) Ctrl+F (Control-ef)
+## Ctrl+F (Control-ef)
 A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
 
 ## Architecture
