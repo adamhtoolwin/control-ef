@@ -5,3 +5,5 @@ import javax.persistence.Entity;
 @Entity
 public class Transcript { 
 }
+
+//Prototype - getting copies of transcript data
