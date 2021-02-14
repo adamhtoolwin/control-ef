@@ -63,7 +63,6 @@ Transcript Generator ![0%](https://progress-bar.dev/0)
 ---
 
 # Design Pattern integration
-
 ## Factory
 This pattern defines an interface that is used to create an object and lets the subclasses decide which class to instantiate. The Factory Method lets a class defer instantiation to its subclasses. In the repository, different roles are created from the Role Factory having different access privileges such as Admin user who handles the administrative tasks of the application and the role registered user who are basically users who are registered to the application to use.
 
