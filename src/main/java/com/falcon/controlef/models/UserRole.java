@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.falcon.controlef.models;
 
 public interface UserRole {
 	void setName (String name);
