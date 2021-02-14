@@ -1,17 +1,18 @@
 package com.falcon.controlef.vidstate;
+import com.falcon.controlef.models.Video;
 
 public class StateNull implements State {
 
 	Video video; //???
 
-//	StateNull(Video video) {
-//		this.video = video;
-//	}//???
-	
+	public StateNull(Video video) {
+		this.video = video;
+	}
+
 	@Override
 	public void stateUp() {
 		System.out.println("Video started uploading");
-		video.state = new StateUpload(video);//???
+		video.state = new StateUpload(video);
 
 	}
 
@@ -27,4 +28,8 @@ public class StateNull implements State {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Null";
+	}
 }

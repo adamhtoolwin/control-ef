@@ -1,4 +1,5 @@
 package com.falcon.controlef.vidstate;
+import com.falcon.controlef.models.Video;
 
 public class StateTranscript implements State {
 	Video video;
@@ -28,4 +29,8 @@ public class StateTranscript implements State {
 
 	}
 
+	@Override
+	public String toString() {
+		return "Transcipt";
+	}
 }

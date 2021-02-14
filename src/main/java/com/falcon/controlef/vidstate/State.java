@@ -6,4 +6,6 @@ public interface State {
 	void errorEncountered();
 
 	void printState();
+
+	String toString();
 }

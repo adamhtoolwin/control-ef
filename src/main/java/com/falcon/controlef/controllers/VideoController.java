@@ -1,5 +1,7 @@
 package com.falcon.controlef.controllers;
 
+import com.falcon.controlef.controllers.services.VideoService;
+import com.falcon.controlef.controllers.services.VideoServiceInterface;
 import com.falcon.controlef.models.Video;
 
 import org.springframework.stereotype.Controller;
@@ -15,8 +17,13 @@ public class VideoController {
     }
 
     @PostMapping("/videos/upload")
-    public String uploadVideo(@RequestParam(name = "title") String title ){
-        System.out.println(title);
+    public String uploadVideo(@RequestParam(name = "title") String title){
+        Video video = new Video();
+        video.setTitle(title);
+
+        VideoServiceInterface vidService = new VideoService();
+        vidService.process(video);
+
         // facade - videoService.process(video)
         // upload to storage somewhere
         // connect with audio API

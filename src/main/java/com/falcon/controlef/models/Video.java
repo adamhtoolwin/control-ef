@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import com.falcon.controlef.vidstate.State;
+import com.falcon.controlef.vidstate.StateNull;
 
 @Entity
 public class Video {
@@ -12,6 +16,9 @@ public class Video {
     private int id;
     private String title;
     private String status;
+
+    @Transient
+	public State state;
 
     public int getId() {
         return id;
@@ -29,13 +36,24 @@ public class Video {
         this.title = title;
     }
 
-    public String getStatus() {
-        return status;
-    }
+    public Video() {
+		state = new StateNull(this);
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
+	// if ( the video state number goes up )
+	public void stateUp() {
+		state.stateUp();
+        this.status = state.toString();
+	}
+
+	// if ( an error is encountered in the database or other processes)
+	public void errorEncountered() {
+		state.errorEncountered();
+	}
+
+	public void printState() {
+		state.printState();
+	}
 
     
 }

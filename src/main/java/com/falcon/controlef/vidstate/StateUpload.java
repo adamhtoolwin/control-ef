@@ -1,4 +1,5 @@
 package com.falcon.controlef.vidstate;
+import com.falcon.controlef.models.Video;
 
 public class StateUpload implements State {
 
@@ -7,6 +8,7 @@ public class StateUpload implements State {
 	StateUpload (Video video) {
 	this.video = video;
 	}//???
+	
 	@Override
 	public void stateUp() {
 		System.out.println("Video has finished uploading. Transitioning to transcript generation.");
@@ -26,6 +28,11 @@ public class StateUpload implements State {
 		System.out.println("Current video state: Uploading");
 		// Display percents
 
+	}
+
+	@Override
+	public String toString() {
+		return "Uploading";
 	}
 
 }
