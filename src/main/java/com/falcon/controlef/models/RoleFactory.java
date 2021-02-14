@@ -1,4 +1,4 @@
-package com.example.demo.models;
+package com.falcon.controlef.models;
 
 import org.springframework.stereotype.Component;
 
