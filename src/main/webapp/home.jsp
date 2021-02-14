@@ -24,5 +24,14 @@ pageEncoding="ISO-8859-1"%>
       <input type="submit">
     </form>
 
+    <br>
+    
+    <h1>Upload video using cors</h1>
+    <hr>
+    <form action="videos/cor-upload" method="POST">
+      Title: <input type="text" name="title"><br>
+      <input type="submit">
+    </form>
+
 </body>
 </html>
