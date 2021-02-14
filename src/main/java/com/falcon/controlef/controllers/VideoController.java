@@ -24,6 +24,8 @@ public class VideoController {
         VideoServiceInterface vidService = new VideoService();
         vidService.process(video);
 
+        System.out.println(video);
+
         // facade - videoService.process(video)
         // upload to storage somewhere
         // connect with audio API

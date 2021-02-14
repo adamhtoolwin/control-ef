@@ -9,7 +9,10 @@ import javax.persistence.Transient;
 import com.falcon.controlef.vidstate.State;
 import com.falcon.controlef.vidstate.StateNull;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class Video {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
