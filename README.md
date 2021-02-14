@@ -60,6 +60,7 @@ Database ![0%](https://progress-bar.dev/0)
 
 Transcript Generator ![0%](https://progress-bar.dev/0)
 
+\* Subject to change for the next two weeks.
 ---
 
 # Design Pattern integration
@@ -76,15 +77,15 @@ The Singleton pattern ensures that a class has only one instance and provides a 
 A facade DP is used to encapsulate all the workflow after a user uploads a video. This is done by the VideoService service class and is called directly in the VideoController. This is one way of doing the workflow and another way is the Chain of Responsibility below. This DP is closely tied in with the State DP as well. We think that this DP will be very useful in other features of the application as well. For now, the workflow only does simple printing, with no actual processing.
 
 ## Chain of Responsibility
-A chain of responsibility called VideoProcessingChain is used also to simulate the workflow of the user uploading a video. This is an alternative method to the Facade approach above but we have a plan to combine both in our final implementation. There are two processes so far in the chain - the VideoUploader and the TranscriptGenerator. For now, the workflow only does simple printing, with no actual processing.
+The Chain of Responsibility pattern decouple the sender of a request to the receiver by giving more than one object a chance to handle a request. A chain of responsibility called VideoProcessingChain is used here to simulate the workflow of the user uploading a video. This is an alternative method to the Facade approach above, but we have a plan to combine both in our final implementation. There are two processes so far in the chain - the VideoUploader and the TranscriptGenerator. For now, the workflow only does simple printing, with no actual processing.
 
 ## Decorator
 Decorator design pattern was implemented as a limited tag function. A user can input: a course tag, the degree of the course, the host (lecturer) and the activity type (lab/lecture/seminar). At the end this can be used for search and for a semi-automatic description of a video. The integration image serves as an example:
 Tags are not mandatory. When used, the design pattern allows for some of the tags to be empty (not called). But the current implementation does not support that.
 
 ## State
-State design pattern was implemented as a dynamic video processing progress representation. In other words, a box that shows in which state of processing the video is currently at: preparation, upload, transcription, error or done.
-There are 4 state classes. Each must proceed another in a fixed order and cannot go down [stateUp()]. Each class also has an ability to report an error [errorEncountered()]. Each class can report its state [printState()].
+State design pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class. The State design pattern was implemented as a dynamic video processing progress representation. In other words, a box that shows in which state of processing the video is currently at: preparation, upload, transcription, error or done.
+There are 4 state classes. Each must proceed to another in a fixed order and cannot go down [stateUp()]. Each class also has an ability to report an error [errorEncountered()]. Each class can report its state [printState()].
 
 ---
-\* Subject to change for the next two weeks.
+
