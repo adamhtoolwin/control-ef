@@ -23,7 +23,7 @@ A platform where students can search any word or phrase they are interested in, 
 7. [Dependcies](#dependencies)
 8. [Team Responsibilites](#team-responsibilites)
 9. [Design Pattern integration](#design-pattern-integration)
-10. Security
+10. [Security](#security)
 
 ## Architecture
 
@@ -127,7 +127,7 @@ Security (Auth&Auth) for this application is carried out via the built-in Spring
 
 Our original design was supposed to allow only logged in users to access the [homepage](http://localhost:8080) as well. However, due to some unknown bug, everyone can access the home page as well. Our config also defines the route matcher `antMatchers("/**").hasAnyRole("ADMIN","USER")` in the `SecurityConfig.java`. Any advice would be appreciated.
 
-Users can register through the Registration form.
+Users can register through the Registration form. After an email is sent to the Mailtrap email API.
 
 Sample data for login:
 
