@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.falcon.controlef.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.dao.UserDao;
-import com.example.demo.models.User;
+import com.com.falcon.controlef.dao;
+import com.falcon.controlef.models.User;
 
 
 @Service
