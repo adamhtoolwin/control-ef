@@ -50,6 +50,9 @@ pageEncoding="ISO-8859-1"%>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block" name="submit">Log in</button>
             </div>
+            <div class="form-group">
+	            ${SPRING_SECURITY_LAST_EXCEPTION.message}
+            </div>
             <div class="clearfix">
                 <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
                 <a href="#" class="float-right">Forgot Password?</a>
