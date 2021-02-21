@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="nav" tagdir="/WEB-INF/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -16,22 +17,24 @@ pageEncoding="ISO-8859-1"%>
 </style>
 
 <body>
-    <h1>Upload video</h1>
-    <hr>
-
-    <form action="videos/upload" method="POST">
-      Title: <input type="text" name="title"><br>
-      <input type="submit">
-    </form>
-
-    <br>
+    <nav:navbar>
+        <h1>Upload video</h1>
+        <hr>
     
-    <h1>Upload video using cors</h1>
-    <hr>
-    <form action="videos/cor-upload" method="POST">
-      Title: <input type="text" name="title"><br>
-      <input type="submit">
-    </form>
+        <form action="videos/upload" method="POST">
+          Title: <input type="text" name="title"><br>
+          <input type="submit">
+        </form>
+    
+        <br>
+        
+        <h1>Upload video using cors</h1>
+        <hr>
+        <form action="videos/cor-upload" method="POST">
+          Title: <input type="text" name="title"><br>
+          <input type="submit">
+        </form>
+    </nav:navbar>
 
 </body>
 </html>

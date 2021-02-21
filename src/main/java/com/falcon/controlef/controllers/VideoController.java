@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class VideoController {
     @GetMapping("/videos/upload")
     public String upload() {
-        return "upload.jsp";
+        return "/upload.jsp";
     }
 
     @PostMapping("/videos/upload") 
