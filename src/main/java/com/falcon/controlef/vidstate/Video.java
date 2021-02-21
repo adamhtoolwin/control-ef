@@ -4,7 +4,7 @@ public class Video {
 	State state; //the class can have a state
 
 	public Video() {
-		state = new StateNull();
+		// state = new StateNull();
 	}
 
 	// if ( the video state number goes up )

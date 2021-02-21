@@ -15,5 +15,11 @@ public class TranscriptGenerator implements VideoProcessingChain {
     public void process(Video video) {
         System.out.println("Generating transcript...");
     }
+
+    @Override
+    public VideoProcessingChain getChain() {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }

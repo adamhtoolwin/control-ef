@@ -15,16 +15,34 @@ pageEncoding="ISO-8859-1"%>
   <title>Control-ef</title>
 </head>
 
-<style>
-    table, th, td {
-  border: 1px solid black;
-}
-</style>
-
 <nav:navbar>
-  <div class="container">
-    <h1>Admin Dashboard</h1>
-  </div>
+    <div class="container">
+    <br>
+    <h1>Users</h1>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID #</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        
+        <tbody><c:out value="${user.id}"/></tbody>
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <th scope="row"><c:out value="${user.id}"/></th></th>
+                    <!-- <td>td> -->
+                    <td><c:out value="${user.username}"/></td>
+                    <td><c:out value="${user.email}"/></td>
+                    <td><c:out value="${user.active}"/></td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+    </div>
   
 </nav:navbar>
 
