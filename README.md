@@ -70,6 +70,9 @@ Transcript Generator ![0%](https://progress-bar.dev/0)
 5. JSTL
 6. JPA
 7. Tomcat jasper
+8. Spring Security
+9. Validation
+10. Java Mail Sender
 
 # Design Pattern integration
 
