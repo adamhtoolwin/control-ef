@@ -12,6 +12,19 @@
 
 A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
 
+# Table of Contents
+
+1. [Architecture](#architecture)
+2. [Implementation Details](#implementation-details)
+3. [Quality Attribute Analysis](#quality-attribute-analysis)
+4. [Team Responsibilites](#team-responsibilites)
+5. [Meeting Schedule](#meeting-schedule)
+6. [Timetable](#timetable)
+7. [Dependcies](#dependencies)
+8. [Team Responsibilites](#team-responsibilites)
+9. [Design Pattern integration](#design-pattern-integration)
+10. Security
+
 ## Architecture
 
 TBD
@@ -108,3 +121,15 @@ There are 4 state classes. Each must proceed to another in a fixed order and can
 
 ---
 
+## Security
+
+Security (Auth&Auth) for this application is carried out via the built-in Spring Security. Only Admins can access the admin dashboard. When users access it, they are brought to an error page. It was originally designed to hide the admin dashboard button in the navbar but a problem occurred (see below).
+
+Our original design was supposed to allow only logged in users to access the [homepage](http://localhost:8080) as well. However, due to some unknown bug, everyone can access the home page as well. Our config also defines the route matcher `antMatchers("/**").hasAnyRole("ADMIN","USER")` in the `SecurityConfig.java`. Any advice would be appreciated.
+
+Users can register through the Registration form.
+
+Sample data for login:
+
+1. username: admin, password: password
+2. username: john, password: password
