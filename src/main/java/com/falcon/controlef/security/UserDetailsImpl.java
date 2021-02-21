@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.falcon.controlef.security;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -8,8 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.example.demo.models.User;
-import com.example.demo.models.Role;
+import com.falcon.controlef.models.User;
+import com.falcon.controlef.models.Role;
 
 
 public class UserDetailsImpl implements UserDetails{
