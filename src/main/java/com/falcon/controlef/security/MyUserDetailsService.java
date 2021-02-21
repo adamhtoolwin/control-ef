@@ -1,14 +1,14 @@
 package com.falcon.controlef.security;
 
 
+import com.falcon.controlef.dao.UserDao;
+import com.falcon.controlef.models.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import com.com.falcon.controlef.dao;
-import com.falcon.controlef.models.User;
 
 
 @Service
