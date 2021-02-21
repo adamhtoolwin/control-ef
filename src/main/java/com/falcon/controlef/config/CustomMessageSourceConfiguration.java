@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.falcon.controlef.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
