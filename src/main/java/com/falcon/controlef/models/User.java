@@ -1,18 +1,28 @@
 package com.falcon.controlef.models;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
+// @Data
+@Getter
+@Setter
+// @EqualsAndHashCode(exclude = "roles")
 public class User {
     
     @Id
@@ -37,4 +47,8 @@ public class User {
     private String email;
 
     private boolean active;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JsonBackReference
+    private Set<Role> roles;
 }

@@ -27,6 +27,7 @@ pageEncoding="ISO-8859-1"%>
                 <th>Username</th>
                 <th>Email</th>
                 <th>Active</th>
+                <th>Role</th>
             </tr>
         </thead>
         
@@ -34,10 +35,14 @@ pageEncoding="ISO-8859-1"%>
             <c:forEach items="${users}" var="user">
                 <tr>
                     <th scope="row"><c:out value="${user.id}"/></th></th>
-                    <!-- <td>td> -->
                     <td><c:out value="${user.username}"/></td>
                     <td><c:out value="${user.email}"/></td>
                     <td><c:out value="${user.active}"/></td>
+                    <td>
+                        <c:forEach items="${user.roles}" var="role">
+                            <p><c:out value="${role.name}"/></p>
+                        </c:forEach>
+                    </td>
                 </tr>
             </c:forEach>
         </tbody>
