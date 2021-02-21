@@ -23,7 +23,7 @@ pageEncoding="ISO-8859-1"%>
 
 <nav:navbar>
   <div class="container">
-    <h1>Welcome!</h1>
+    <h1>Admin Dashboard</h1>
   </div>
   
 </nav:navbar>
