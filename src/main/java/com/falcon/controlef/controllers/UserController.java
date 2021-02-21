@@ -40,4 +40,14 @@ public class UserController {
 
         return mv;
     }
+
+    @GetMapping(path = "/login")
+    public String login() {
+        return "login.jsp";
+    }
+
+    @GetMapping(path = "/logout-success")
+    public String logout() {
+        return "home.jsp";
+    }
 }
