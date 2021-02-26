@@ -33,7 +33,7 @@ A platform where students can search any word or phrase they are interested in, 
 2. Microservices
 3. Service-oriented Architecture
 
-The main ControlEF application will utilize the model-view-controller (MVC) architecture pattern as we will be using the MVC framework Spring Boot. The architecture regarding the YouTube and Transcription APIs will utilize microservices in the form of the aforementioned APIs themselves. It will also incorporate some best practices from service-oriented architecture (SOA).
+The ControlEF application will utilize the model-view-controller (MVC) architecture pattern in main as we will be using the MVC framework Spring Boot. The architecture regarding the YouTube and Transcription APIs will utilize microservices in the form of the aforementioned APIs themselves. It will also incorporate some best practices from service-oriented architecture (SOA).
 
 ## Implementation Details
 
