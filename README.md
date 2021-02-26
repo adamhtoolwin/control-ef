@@ -20,14 +20,20 @@ A platform where students can search any word or phrase they are interested in, 
 4. [Team Responsibilites](#team-responsibilites)
 5. [Meeting Schedule](#meeting-schedule)
 6. [Timetable](#timetable)
-7. [Dependcies](#dependencies)
+7. [Dependencies](#dependencies)
 8. [Team Responsibilites](#team-responsibilites)
 9. [Design Pattern integration](#design-pattern-integration)
 10. [Security](#security)
 
 ## Architecture
 
-TBD
+![deployment](Documentation/images/control-ef-deployment.jpg)
+
+1. Model-view-controller (MVC)
+2. Microservices
+3. Service-oriented Architecture
+
+The main ControlEF application will utilize the model-view-controller (MVC) architecture pattern as we will be using the MVC framework Spring Boot. The architecture regarding the YouTube and Transcription APIs will utilize microservices in the form of the aforementioned APIs themselves. It can also be classified as a service-oriented architecture (SOA).
 
 ## Implementation Details
 
