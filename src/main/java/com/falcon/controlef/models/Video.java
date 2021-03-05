@@ -50,5 +50,8 @@ public class Video {
 	public void printState() {
 		state.printState();
 	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private User user;
 
 }
