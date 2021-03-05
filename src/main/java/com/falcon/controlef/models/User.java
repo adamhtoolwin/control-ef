@@ -51,4 +51,9 @@ public class User {
     @ManyToMany(fetch = FetchType.EAGER)
     @JsonBackReference
     private Set<Role> roles;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonIgnore
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	private List<Video> videos;
 }
