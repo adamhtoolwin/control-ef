@@ -45,6 +45,10 @@ public class AdminUser implements UserRole{
 	
 	}
 
-	
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "id", referencedColumnName = "id") 
+	@JsonIgnore
+	@MapsId
+	private User user;
 
 }
