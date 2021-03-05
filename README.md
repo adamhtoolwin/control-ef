@@ -143,12 +143,17 @@ Sample data for login:
 
 ## Data Relationships
 
-For now we only identified one relationship between the `User` entity and the `Video` Entity, in addition to the ManytoMany relationship between `Users` and `Roles` (as specified in Spring Security). Therefore `User` has a OnetoMany relationship with `Video`.
+For now we only identified and implemented one relationship between the `User` entity and the `Video` Entity, in addition to the ManytoMany relationship between `Users` and `Roles` (as specified in Spring Security). Therefore `User` has a OnetoMany relationship with `Video`.
 
 - A User (Admin or Lecturer role) can upload many videos.
 - A Video has to be uploaded by a single User.
 
 ![data](Documentation/images/video-h2.png)
 
-We will add further relationships if needed.
-***
+Other potential relationships:
+
+- Video-Comment: OnetoMany
+
+- Video-Tag: ManytoMany
+
+---
