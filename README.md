@@ -24,6 +24,7 @@ A platform where students can search any word or phrase they are interested in, 
 8. [Team Responsibilites](#team-responsibilites)
 9. [Design Pattern integration](#design-pattern-integration)
 10. [Security](#security)
+11. [Data Relationships](#data-relationships)
 
 ## Architecture
 
@@ -139,3 +140,15 @@ Sample data for login:
 
 1. username: admin, password: password
 2. username: john, password: password
+
+## Data Relationships
+
+For now we only identified one relationship between the `User` entity and the `Video` Entity, in addition to the ManytoMany relationship between `Users` and `Roles` (as specified in Spring Security). Therefore `User` has a OnetoMany relationship with `Video`.
+
+- A User (Admin or Lecturer role) can upload many videos.
+- A Video has to be uploaded by a single User.
+
+![data](Documentation/images/video-h2.png)
+
+We will add further relationships if needed.
+***
