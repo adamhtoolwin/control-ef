@@ -1,5 +1,13 @@
 package com.falcon.controlef.models;
 
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class AdminUser implements UserRole{
 
 	private String id;
