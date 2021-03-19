@@ -27,7 +27,6 @@ public class Video {
 	private String title;		//Title of the video file
 	private String keyword;		//Keyword/tags
 	private Date upload;		//Date the video uploaded
-	private String uploader;	//Name of the person who upload the video
     private String status;
 
     @Transient

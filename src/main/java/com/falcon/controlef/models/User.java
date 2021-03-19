@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -26,10 +27,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-// @Data
 @Getter
 @Setter
-// @EqualsAndHashCode(exclude = "roles")
+@Table(name = "user_account")
 public class User {
     
     @Id
