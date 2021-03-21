@@ -42,11 +42,13 @@
                 </div>
                 </li>
 
-                <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-
+                <c:if test="${not empty user}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </c:if>
                 
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

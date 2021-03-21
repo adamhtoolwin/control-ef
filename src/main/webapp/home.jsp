@@ -18,7 +18,6 @@ pageEncoding="ISO-8859-1"%>
   <nav:navbar>
     <div class="container">
       <h1>Welcome!</h1>
-      <a href="/logout">Logout</a>
     </div>
     
   </nav:navbar>

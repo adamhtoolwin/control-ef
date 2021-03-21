@@ -39,24 +39,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	protected void configure(HttpSecurity http) throws Exception{
-		http
-			.csrf().disable()		
-			.authorizeRequests()
-				.antMatchers("/h2-console/**", "/login", "/register").permitAll()
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				.antMatchers("/**").hasAnyRole("ADMIN","USER")
-			.and()
-			.formLogin()
-				.loginPage("/login").permitAll() 
-				.defaultSuccessUrl("/",true)
-			.and()
-			.logout().invalidateHttpSession(true)
-			.clearAuthentication(true)
-			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-			.logoutSuccessUrl("/").permitAll();		
+		http.csrf().disable()		
+		.authorizeRequests()
+		.antMatchers("/h2-console/**", "/login", "/register").permitAll()
+		.antMatchers("/admin/**").hasRole("ADMIN")
+		.antMatchers("/**").hasAnyRole("ADMIN", "USER")
+        .and()
+        .formLogin().loginPage("/login").permitAll()
+        .defaultSuccessUrl("/", true)
+        .and()
+        .logout().invalidateHttpSession(true)
+        .clearAuthentication(true)
+        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+        .logoutSuccessUrl("/logout-success").permitAll();
+		
 			
-			//To make h2 frame visible
-			http.headers().frameOptions().disable();
+		//To make h2 frame visible
+		http.headers().frameOptions().disable();
 	}
 	
 	

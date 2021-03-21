@@ -31,43 +31,6 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    @GetMapping("/")
-    public ModelAndView home(Principal principal) {
-        ModelAndView mv = new ModelAndView("home.jsp");
-        // User user = userService.findByUsername(principal.getName());
-        // mv.addObject("user", user);
-
-        // for (Role role: user.getRoles()) {
-        //     if (role.getName().equalsIgnoreCase("ROLE_ADMIN")) {
-        //         System.out.println("Current user is " + role.getName());
-        //         mv.addObject("admin_flag", true);
-        //     }
-        //     if (role.getName().equalsIgnoreCase("ROLE_USER")) {
-        //         System.out.println("Current user is " + role.getName());
-        //     }
-        //     if (role.getName().equalsIgnoreCase("ROLE_PREMIUM_USER")) {
-        //         System.out.println("Current user is " + role.getName());
-        //     }
-        // }
-        mv.addObject("admin_flag", true);
-
-        return mv;
-    }
-
-    @GetMapping("/admin")
-    public ModelAndView admin() {
-        ModelAndView mv = new ModelAndView("admin.jsp");
-        mv.addObject("page", "Admin Dashboard");
-        List<User> userList = uDao.findAll();
-
-        // TODO
-        // Add User role logic here
-        mv.addObject("admin_flag", true);
-        mv.addObject("users", userList);
-
-        return mv;
-    }
-
     @GetMapping(path = "/login")
     public String login() {
         return "login.jsp";
@@ -94,6 +57,6 @@ public class UserController {
 
     @GetMapping(path = "/logout-success")
     public String logout() {
-        return "home.jsp";
+        return "redirect:/";
     }
 }

@@ -1,7 +1,9 @@
 package com.falcon.controlef.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,9 +26,16 @@ public class Video {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	private String title;		//Title of the video file
+	
 	private String keyword;		//Keyword/tags
-	private Date upload;		//Date the video uploaded
+	
+	private LocalDate uploadDate;		//Date the video uploaded
+
+	@Column(nullable = false)
+	private String link;
+
     private String status;
 
     @Transient

@@ -47,6 +47,37 @@ pageEncoding="ISO-8859-1"%>
             </c:forEach>
         </tbody>
     </table>
+
+    <br>
+    <h1>Videos</h1>
+    <hr>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID #</th>
+                <th>Title</th>
+                <th>Link</th>
+                <th>Uploaded Date</th>
+                <th>Uploaded by</th>
+            </tr>
+        </thead>
+        
+        <tbody></tbody>
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <th scope="row"><c:out value="${user.id}"/></th></th>
+                    <td><c:out value="${user.username}"/></td>
+                    <td><c:out value="${user.email}"/></td>
+                    <td><c:out value="${user.active}"/></td>
+                    <td>
+                        <c:forEach items="${user.roles}" var="role">
+                            <p><c:out value="${role.name}"/></p>
+                        </c:forEach>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
     </div>
   
 </nav:navbar>
