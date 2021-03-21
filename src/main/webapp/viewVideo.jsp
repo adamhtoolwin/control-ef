@@ -16,31 +16,15 @@ pageEncoding="ISO-8859-1"%>
 </head>
 
   <nav:navbar>
+    <br>
     <div class="container">
-      
-      <div class="container">
-        <br>
-        <h1>Videos</h1>
-        <hr>
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID #</th>
-                    <th>Title</th>
-                    <th>Uploaded Date</th>
-                </tr>
-            </thead>
-            
-            <tbody>
-                <c:forEach items="${videos}" var="video">
-                    <tr>
-                        <th scope="row"><c:out value="${video.id}"/></th></th>
-                        <td><a href="/video/${video.id}"><c:out value="${video.title}"/></a></td>
-                        <td><c:out value="${video.uploadDate}"/></td>
-                    </tr>
-                </c:forEach>
-            </tbody>
-        </table>
+        <iframe width="1080" height="550" src="https://www.youtube.com/embed/${video.link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+
+        <br><hr>
+        <h2><c:out value="${video.title}"/></h2>
+        <h5><c:out value="${video.lecturer}"/></h5>
+        <p>Tags: </p>
     </div>
     
   </nav:navbar>

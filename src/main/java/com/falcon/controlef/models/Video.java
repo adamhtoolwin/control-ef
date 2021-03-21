@@ -1,6 +1,6 @@
 package com.falcon.controlef.models;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -15,12 +15,16 @@ import javax.persistence.Transient;
 import com.falcon.controlef.vidstate.State;
 import com.falcon.controlef.vidstate.StateNull;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Video {
 	
 	@Id
@@ -31,7 +35,9 @@ public class Video {
 	
 	private String keyword;		//Keyword/tags
 	
-	private LocalDate uploadDate;		//Date the video uploaded
+	private LocalDateTime uploadDate;		//Date the video uploaded
+
+	private String lecturer;
 
 	@Column(nullable = false)
 	private String link;
