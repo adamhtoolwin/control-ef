@@ -9,9 +9,24 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <meta charset="ISO-8859-1">
         <title>Control-ef</title>
+
+        <style>
+            .navbar-custom {
+                background-color: #1236d4;
+            }
+
+            .navbar-custom .navbar-brand,
+            .navbar-custom .navbar-text {
+                color: rgba(255,255,255,.8);
+            }
+
+            .navbar-custom .navbar-nav .nav-link {
+                color: rgba(255,255,255,.5);
+            }
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-custom">
             <a class="navbar-brand" href="/">Control-ef</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

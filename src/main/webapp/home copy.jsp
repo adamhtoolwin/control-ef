@@ -13,28 +13,6 @@ pageEncoding="ISO-8859-1"%>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <meta charset="ISO-8859-1">
   <title>Control-ef</title>
-
-  <!-- <style>
-    
-    .navbar-custom {
-      background-color: #1236d4;
-    }
-    /* change the brand and text color */
-    .navbar-custom .navbar-brand,
-    .navbar-custom .navbar-text {
-        color: rgba(255,255,255,.8);
-    }
-    /* change the link color */
-    .navbar-custom .navbar-nav .nav-link {
-        color: rgba(255,255,255,.5);
-    }
-    /* change the color of active or hovered links */
-    .navbar-custom .nav-item.active .nav-link,
-    .navbar-custom .nav-item:hover .nav-link {
-        color: #ffffff;
-    }
-
-  </style> -->
 </head>
 
   <nav:navbar>
@@ -42,19 +20,28 @@ pageEncoding="ISO-8859-1"%>
       
       <div class="container">
         <br>
-        <c:forEach items="${videos}" var="video">
-          <div class="row">
-            <div class="col-md-auto">
-              <a href="/video/${video.id}"><img width="200" src="https://img.youtube.com/vi/${video.youtubeId}/1.jpg"></a>
-            </div>
-            <div class="col-sm">
-                <a href="/video/${video.id}"><h3><c:out value="${video.title}"/></h3></a>
-                <p>By <c:out value="${video.lecturer}"/></p>
-            </div>
-          </div>
-          <br>
-        </c:forEach>
-      </div>
+        <h1>Videos</h1>
+        <hr>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID #</th>
+                    <th>Title</th>
+                    <th>Uploaded Date</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <c:forEach items="${videos}" var="video">
+                    <tr>
+                        <th scope="row"><c:out value="${video.id}"/></th></th>
+                        <td><a href="/video/${video.id}"><c:out value="${video.title}"/></a></td>
+                        <td><c:out value="${video.uploadDate}"/></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
     
   </nav:navbar>
 

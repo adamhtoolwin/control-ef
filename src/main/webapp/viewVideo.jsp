@@ -15,11 +15,27 @@ pageEncoding="ISO-8859-1"%>
   <title>Control-ef</title>
 </head>
 
+<style>
+    .transcript-border {
+        border-style: solid;
+        border-width: 3px !important;
+        border-radius: 20px;
+        border-color: blue;
+    }
+</style>
+
   <nav:navbar>
     <br>
     <div class="container">
-        <iframe width="1080" height="550" src="https://www.youtube.com/embed/${video.link}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
+        <div class="row">
+            <div class="col-sm">
+                <iframe width="780" height="550" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-sm transcript-border">
+                <h4>Transcript</h4>
+            </div>
+        </div>
 
         <br><hr>
         <h2><c:out value="${video.title}"/></h2>

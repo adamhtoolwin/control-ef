@@ -40,7 +40,7 @@ public class Video {
 	private String lecturer;
 
 	@Column(nullable = false)
-	private String link;
+	private String youtubeId;
 
     private String status;
 
