@@ -12,6 +12,20 @@
 
 A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
 
+## Setting up the Database for Development
+
+- Install postgreSQL
+
+Enter these commands in terminal on Linux. If Windows, then equivalent commands can be found:
+
+1. `sudo -u postgres createuser falcon`
+2. `sudo -u postgres createdb controlefdb -O "falcon"`
+3. `sudo -u postgres psql`
+  
+4. `psql=# alter user falcon with encrypted password '{PASSWORD}';`
+
+5. `psql=# grant all privileges on database controlefdb to falcon`
+
 # Table of Contents
 
 1. [Architecture](#architecture)
