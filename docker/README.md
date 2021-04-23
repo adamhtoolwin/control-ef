@@ -17,3 +17,29 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 ### Create the tables from generated DDL
 
 - `psql -h localhost -p 4125 -U falcon -f ../create.sql controlefdb`
+
+## Apache Cassandra on Puffer
+
+Create the network on Docker
+
+- `docker network create controlef`
+
+Check networks
+
+- `docker network ls`
+
+Run the latest cassandra image as a container
+
+- `docker run -d -p 4127:9042 -p 4128:7000 --rm --name control-cassandra --network controlef -d cassandra:latest`
+
+Check container node status
+
+- `docker exec -it control-cassandra nodetool status`
+
+Setup ssh tunnel from local to puuffer
+
+- `ssh -L 4127:localhost:4127 puffer`
+
+Connect from local machine
+
+- `cqlsh localhost 4127`
