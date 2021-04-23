@@ -89,11 +89,19 @@ Issue tracker: Trello
 
 ## Progress
 
-Web Application ![0%](https://progress-bar.dev/0)
+Authentication ![0%](https://progress-bar.dev/100)
+
+YouTube Player ![0%](https://progress-bar.dev/100)
+
+YouTube Upload ![0%](https://progress-bar.dev/20)
+
+YouTube Transcripts ![0%](https://progress-bar.dev/10)
 
 Database ![0%](https://progress-bar.dev/100)
 
-Transcript Generator ![0%](https://progress-bar.dev/100)
+PostgreSQL Experimental Setup ![0%](https://progress-bar.dev/100)
+
+Cassandra Experimental Setup ![0%](https://progress-bar.dev/0)
 
 ## Dependencies
 
