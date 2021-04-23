@@ -2,18 +2,20 @@ package com.falcon.controlef.models;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import com.falcon.controlef.vidstate.State;
 import com.falcon.controlef.vidstate.StateNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Builder;
 import lombok.Data;
@@ -24,8 +26,7 @@ import lombok.Data;
 public class Video {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private String id;
 	
 	private String title;		//Title of the video file
 	
@@ -64,4 +65,7 @@ public class Video {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private User user;
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "video", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonIgnore
+	private List<Transcript> transcripts;
 }
