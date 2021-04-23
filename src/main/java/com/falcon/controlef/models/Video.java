@@ -34,7 +34,6 @@ public class Video {
 	
 	private LocalDate uploadDate;		//Date the video uploaded
 
-	@Column(nullable = false)
 	private String link;
 
     private String status;

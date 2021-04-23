@@ -28,6 +28,10 @@ if __name__ == "__main__":
 
     pbar = tqdm(csv_files)
 
+    video_data = {
+        'id': [],
+    }
+
     errors = []
 
     for csv in pbar:
@@ -38,6 +42,9 @@ if __name__ == "__main__":
 
         try:
             df = pd.read_csv(csv, sep=";")
+
+            video_data['id'].append(video_id)
+
             df.drop('Number', 1, inplace=True)
 
             df.columns = ['start_time', 'end_time', 'content']
@@ -47,6 +54,9 @@ if __name__ == "__main__":
             df.to_csv(output_folder + filename, index=False)
         except pd.errors.ParserError:
             errors.append(csv)
+
+    video_df = pd.DataFrame(video_data)
+    video_df.to_csv(output_folder + "videos.csv", index=False)
 
     f = open("logs.txt", "a")
 

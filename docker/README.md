@@ -18,28 +18,47 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 
 - `psql -h localhost -p 4125 -U falcon -f ../create.sql controlefdb`
 
+### Import from CSV
+
+- `\copy video(id) from videos.csv delimiter ',' csv` (copy just id for video metadata)
+
+- `\copy transcript(start_time, end_time, content, video_id) from _1VpOweDio8.en.csv delimiter ',' csv header` (for transcripts)
+
 ## Apache Cassandra on Puffer
 
-Create the network on Docker
+### Prerequsites for client
+
+1. Apache Cassandra binaries (namely `cqlsh`) on client
+2. Python 2.7
+
+### Create the network on Docker
 
 - `docker network create controlef`
 
-Check networks
+### Check networks
 
 - `docker network ls`
 
-Run the latest cassandra image as a container
+### Run the latest cassandra image as a container
 
-- `docker run -d -p 4127:9042 -p 4128:7000 --rm --name control-cassandra --network controlef -d cassandra:latest`
+- `docker run -d -p 4126:9042 --rm --name control-cassandra --network controlef -d cassandra:latest`
 
-Check container node status
+### (Optional) Run a second node
+
+- `docker run --name control-cassandra2 -d -p 4127:9042 --rm --network controlef -e CASSANDRA_SEEDS=control-cassandra cassandra:latest`
+
+### Check container node status
 
 - `docker exec -it control-cassandra nodetool status`
 
-Setup ssh tunnel from local to puuffer
+### Setup ssh tunnel from local to puuffer
 
-- `ssh -L 4127:localhost:4127 puffer`
+- `ssh -L 4126:localhost:4126 puffer`
 
-Connect from local machine
+### Connect from local machine
 
-- `cqlsh localhost 4127`
+- `cqlsh localhost 4126`
+
+### Run the init.cql to populate tables and keyspaces
+
+- `cqlsh -f init.cql localhost 4126`
