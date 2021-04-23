@@ -91,9 +91,9 @@ Issue tracker: Trello
 
 Web Application ![0%](https://progress-bar.dev/0)
 
-Database ![0%](https://progress-bar.dev/0)
+Database ![0%](https://progress-bar.dev/100)
 
-Transcript Generator ![0%](https://progress-bar.dev/0)
+Transcript Generator ![0%](https://progress-bar.dev/100)
 
 ## Dependencies
 
