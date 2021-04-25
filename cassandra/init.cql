@@ -2,8 +2,8 @@ CREATE KEYSPACE transcript WITH replication = {'class': 'SimpleStrategy', 'repli
 
 CREATE TABLE transcript.transcripts_by_content (
   content text,
-  start_time int,
-  end_time int,
+  start_time float,
+  end_time float,
   video_id text,
   PRIMARY KEY (start_time, video_id));
 

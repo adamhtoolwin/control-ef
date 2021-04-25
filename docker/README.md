@@ -8,7 +8,7 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 
 - `docker run -d -p 4126:5432 -e POSTGRES_PASSWORD=sekrit --name test-pg postgres:10.16` (for testing and now works!)
 
-- `docker run --rm -d -p 4125:5432 -e POSTGRES_USER=falcon -e POSTGRES_PASSWORD=sekrit -e POSTGRES_DB=controlefdb --name control-pg postgres:10.16` (works now too!)
+- `docker run --rm -d -p 4125:5432 -e POSTGRES_USER=falcon -e POSTGRES_PASSWORD=sekrit -e POSTGRES_DB=controlefdb --name control-pg -v /data/directory:/var/lib/postgresql/data postgres:10.16` (works now too!)
 
 - The env variables `-e` are used to config.
 
@@ -20,7 +20,7 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 
 ### Import from CSV
 
-- `\copy video(id) from videos.csv delimiter ',' csv` (copy just id for video metadata)
+- `\copy video(id) from videos.csv delimiter ',' csv` (copy just id for video metadata) (path can be absolute or relative i think)
 
 - `\copy transcript(start_time, end_time, content, video_id) from _1VpOweDio8.en.csv delimiter ',' csv header` (for transcripts)
 
@@ -62,3 +62,7 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 ### Run the init.cql to populate tables and keyspaces
 
 - `cqlsh -f init.cql localhost 4126`
+
+### Import from csv
+
+- `COPY transcript.transcripts_by_content (start_time, end_time, content, video_id) from 'transcripts.csv' with delimiter=',' and header=true ;`

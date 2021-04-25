@@ -1,3 +1,4 @@
+cassandra/import_transcript_transcripts_by_content*
 create.sql
 client_secret.json
 HELP.md

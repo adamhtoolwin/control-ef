@@ -1,0 +1,26 @@
+keyspace: transcript
+
+table: transcripts_by_content
+
+columnspec:
+  - name: start_time
+    size: uniform(0..10) 
+  - name: end_time
+    size: uniform(0..10) 
+  - name: content
+    size: gaussian(100...500)
+  - name: video_id
+    size: fixed(11)
+
+insert:
+  # How many partition to insert per batch
+  partitions: fixed(1)
+  # How many rows to update per partition
+  select: fixed(1)/500
+  # UNLOGGED or LOGGED batch for insert
+  batchtype: UNLOGGED
+
+queries:
+  read1:
+    cql: select * from transcripts_by_content where content like '%a%'
+    fields: samerow
