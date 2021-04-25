@@ -45,7 +45,7 @@ pageEncoding="ISO-8859-1"%>
         <c:forEach items="${videos}" var="video">
           <div class="row">
             <div class="col-md-auto">
-              <a href="/video/${video.id}"><img width="200" src="https://img.youtube.com/vi/${video.youtubeId}/1.jpg"></a>
+              <a href="/video/${video.id}"><img width="200" src="https://img.youtube.com/vi/${video.id}/1.jpg"></a>
             </div>
             <div class="col-sm">
                 <a href="/video/${video.id}"><h3><c:out value="${video.title}"/></h3></a>

@@ -29,7 +29,7 @@ pageEncoding="ISO-8859-1"%>
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <iframe width="780" height="550" src="https://www.youtube.com/embed/${video.youtubeId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <iframe width="780" height="550" src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
             <div class="col-sm transcript-border">

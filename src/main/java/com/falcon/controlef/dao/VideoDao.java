@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "videos", path = "videos")
-public interface VideoDao extends JpaRepository<Video, Integer>{
+public interface VideoDao extends JpaRepository<Video, String>{
     
 }

@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 import com.falcon.controlef.controllers.services.VideoProcessor;
 import com.falcon.controlef.controllers.services.VideoService;
@@ -30,9 +31,11 @@ public class VideoController {
     }
 
     @GetMapping("/video/{id}")
-    public ModelAndView getVideo(Principal principal, @PathVariable("id") int id){
+    public ModelAndView getVideo(Principal principal, @PathVariable("id") String id){
         ModelAndView mv = new ModelAndView("/viewVideo.jsp");
-        Video video = videoDao.getOne(id);
+        Optional<Video> optionalVideo = videoDao.findById(id);
+
+        Video video = optionalVideo.get();
         mv.addObject("video", video);
 
         return mv;
