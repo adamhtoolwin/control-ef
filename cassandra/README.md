@@ -1,5 +1,9 @@
 # Cassandra and Cassandra Stress Testing
 
+## Cassandra Tips
+
+1. Cassandra doesn't delete dropped tables' data until a specified number of seconds called `gc_grace_seconds` has passed (by default `864000`). They are marked with a "tombstone" and every table has this value. To change this for testing cleanup, just run `ALTER TABLE transcript.transcripts_by_content WITH gc_grace_seconds = 5;`. We can then check again with `SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='transcript';`. Of course you can also always manually delete the data. The Cassandra Stress tool below does **NOT** delete data after populating it so beware!
+
 ## Cassandra Stress Tool
 
 ### Quickstart

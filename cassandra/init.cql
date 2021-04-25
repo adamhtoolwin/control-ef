@@ -7,6 +7,8 @@ CREATE TABLE transcript.transcripts_by_content (
   video_id text,
   PRIMARY KEY (start_time, video_id));
 
+ALTER TABLE transcript.transcripts_by_content WITH gc_grace_seconds = 5;
+
 CREATE CUSTOM INDEX content_idx ON transcript.transcripts_by_content (content) 
 USING 'org.apache.cassandra.index.sasi.SASIIndex' 
 WITH OPTIONS = {
