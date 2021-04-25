@@ -5,12 +5,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
+import java.util.Set;
 
 import com.falcon.controlef.controllers.services.VideoProcessor;
 import com.falcon.controlef.controllers.services.VideoService;
 import com.falcon.controlef.controllers.services.VideoServiceInterface;
+import com.falcon.controlef.dao.TranscriptDao;
 import com.falcon.controlef.dao.VideoDao;
 import com.falcon.controlef.models.Video;
+import com.falcon.controlef.service.TranscriptService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,11 +26,31 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class VideoController {
     @Autowired
+    private TranscriptDao transcriptDao;
+
+    @Autowired
     private VideoDao videoDao;
+
+    @Autowired
+    private TranscriptService transcriptService;
     
     @GetMapping("/videos/upload")
     public String upload() {
         return "/upload.jsp";
+    }
+
+    @PostMapping("/videos/search")
+    public ModelAndView search(Principal principal, @RequestParam("search") String search) {
+        ModelAndView mv = new ModelAndView("/searchResult.jsp");
+        Set<Video> videos = transcriptService.search(search);
+
+        for (Video video: videos) {            
+            System.out.println(video.getTitle());
+        }
+        
+        mv.addObject("videos", videos);
+
+        return mv;
     }
 
     @GetMapping("/video/{id}")
