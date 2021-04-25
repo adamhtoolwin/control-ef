@@ -5,6 +5,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import lombok.Builder;
@@ -23,6 +24,7 @@ public class Transcript {
 
     private int endTime;
 
+    @Lob
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
