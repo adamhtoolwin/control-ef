@@ -57,10 +57,11 @@ pageEncoding="ISO-8859-1"%>
             
             <c:forEach items="${tags}" var="tag">
               <div class="col-sm">
-                <form class="form-inline my-2 my-lg-0" action="/videos/searchByTag?tag=${tag.id}" method="POST">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                  <c:out value="${tag.name}"/>(${fn:length(tag.video)})
-                </button>
+                <form class="form-inline my-2 my-lg-0" action="/videos/searchByTag" method="POST">
+                  <input class="form-control mr-sm-2" type="hidden" name="tag" value="${tag.id}">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <c:out value="${tag.name}"/>(${fn:length(tag.video)})
+                  </button>
                 </form>
               </div>
             </c:forEach>
