@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="nav" tagdir="/WEB-INF/tags" %>
 
 
@@ -42,10 +43,32 @@ pageEncoding="ISO-8859-1"%>
       
       <div class="container">
         <br>
-        <form class="form-inline my-2 my-lg-0" action="/videos/search" method="POST">
-          <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="row">
+
+          <div class="col">
+            <form class="form-inline my-2 my-lg-0" action="/videos/search" method="POST">
+              <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+
+        <div class="col">
+          <div class="row">
+            
+            <c:forEach items="${tags}" var="tag">
+              <div class="col-sm">
+                <form class="form-inline my-2 my-lg-0" action="/videos/searchByTag?tag=${tag.id}" method="POST">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                  <c:out value="${tag.name}"/>(${fn:length(tag.video)})
+                </button>
+                </form>
+              </div>
+            </c:forEach>
+          </div>
+        </div>
+        </div>
+
+        <hr>
         <br>
         
         <c:forEach items="${videos}" var="video">

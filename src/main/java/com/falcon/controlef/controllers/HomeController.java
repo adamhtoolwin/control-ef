@@ -3,7 +3,9 @@ package com.falcon.controlef.controllers;
 import java.security.Principal;
 import java.util.List;
 
+import com.falcon.controlef.dao.TagDao;
 import com.falcon.controlef.dao.VideoDao;
+import com.falcon.controlef.models.Tag;
 import com.falcon.controlef.models.User;
 import com.falcon.controlef.models.Video;
 import com.falcon.controlef.service.UserService;
@@ -19,6 +21,9 @@ public class HomeController {
     private VideoDao videoDao;
 
     @Autowired
+    private TagDao tagDao;
+
+    @Autowired
     private UserService userService;
     
     @GetMapping("/")
@@ -29,6 +34,9 @@ public class HomeController {
 
         List<Video> videos = videoDao.findAll();
         mv.addObject("videos", videos);
+
+        List<Tag> tags = tagDao.findAll();
+        mv.addObject("tags", tags);
 
         // for (Role role: user.getRoles()) {
         //     if (role.getName().equalsIgnoreCase("ROLE_ADMIN")) {

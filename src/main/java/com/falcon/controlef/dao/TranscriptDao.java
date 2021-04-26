@@ -2,8 +2,6 @@ package com.falcon.controlef.dao;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import com.falcon.controlef.models.Transcript;
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -12,6 +12,7 @@ import com.falcon.controlef.controllers.services.VideoService;
 import com.falcon.controlef.controllers.services.VideoServiceInterface;
 import com.falcon.controlef.dao.TranscriptDao;
 import com.falcon.controlef.dao.VideoDao;
+import com.falcon.controlef.models.Tag;
 import com.falcon.controlef.models.Video;
 import com.falcon.controlef.service.TranscriptService;
 
@@ -59,7 +60,10 @@ public class VideoController {
         Optional<Video> optionalVideo = videoDao.findById(id);
 
         Video video = optionalVideo.get();
+        Set<Tag> tags = video.getTags();
+
         mv.addObject("video", video);
+        mv.addObject("tags", tags);
 
         return mv;
     }

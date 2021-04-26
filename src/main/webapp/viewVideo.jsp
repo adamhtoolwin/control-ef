@@ -40,7 +40,18 @@ pageEncoding="ISO-8859-1"%>
         <br><hr>
         <h2><c:out value="${video.title}"/></h2>
         <h5><c:out value="${video.lecturer}"/></h5>
-        <p>Tags: </p>
+        <p>
+
+          Tags:
+          <div class="row">
+            
+              <c:forEach items="${tags}" var="tag">
+                <div class="col-sm transcript-border">
+                    <c:out value="${tag.name}"/>
+                </div>
+              </c:forEach>
+          </div>
+        </p>
     </div>
     
   </nav:navbar>
