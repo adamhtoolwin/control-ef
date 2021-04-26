@@ -5,9 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.falcon.controlef.controllers.services.TranscriptGenerator;
 import com.falcon.controlef.dao.TranscriptDao;
 import com.falcon.controlef.dao.VideoDao;
 import com.falcon.controlef.models.Transcript;
+import com.falcon.controlef.models.TranscriptSearchResult;
 import com.falcon.controlef.models.Video;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,10 @@ public class TranscriptServiceImpl implements TranscriptService{
     VideoDao videoDao;
 
     @Override
-    public Set<Video> search(String keyword) {
-        List<Transcript> transcriptList = transcriptDao.findByContentContainingIgnoreCase(keyword);
+    public TranscriptSearchResult search(String keyword) {
+        List<Transcript> transcriptList = transcriptDao.findByContentContainingIgnoreCaseOrderByStartTimeAsc(keyword);
+
+        List<Transcript> transcripts = transcriptDao.findByContentContainingIgnoreCaseOrderByStartTimeAsc(keyword);
 
         // System.out.println(transcriptList);
         Set<Video> videos = new HashSet<>();
@@ -35,7 +39,7 @@ public class TranscriptServiceImpl implements TranscriptService{
             System.out.println(transcript.getVideo().getTitle());
         }
 
-        return videos;
+        return new TranscriptSearchResult(videos, transcripts);
         
     }
     

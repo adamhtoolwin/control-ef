@@ -1,9 +1,7 @@
 package com.falcon.controlef.service;
 
-import java.util.Set;
-
-import com.falcon.controlef.models.Video;
+import com.falcon.controlef.models.TranscriptSearchResult;
 
 public interface TranscriptService {
-    Set<Video> search(String keyword);
+    TranscriptSearchResult search(String keyword);
 }

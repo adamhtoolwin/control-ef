@@ -9,5 +9,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "transcripts", path = "transcripts")
 public interface TranscriptDao extends JpaRepository<Transcript, Integer>{
-    List<Transcript> findByContentContainingIgnoreCase(String content);
+    List<Transcript> findByContentContainingIgnoreCaseOrderByStartTimeAsc(String content);
+
+    List<Transcript> findFirst2ByContentContainingIgnoreCase(String content);
 }

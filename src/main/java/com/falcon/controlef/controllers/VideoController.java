@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -13,6 +14,8 @@ import com.falcon.controlef.controllers.services.VideoServiceInterface;
 import com.falcon.controlef.dao.TranscriptDao;
 import com.falcon.controlef.dao.VideoDao;
 import com.falcon.controlef.models.Tag;
+import com.falcon.controlef.models.Transcript;
+import com.falcon.controlef.models.TranscriptSearchResult;
 import com.falcon.controlef.models.Video;
 import com.falcon.controlef.service.TranscriptService;
 
@@ -43,7 +46,10 @@ public class VideoController {
     @PostMapping("/videos/search")
     public ModelAndView search(Principal principal, @RequestParam("search") String search) {
         ModelAndView mv = new ModelAndView("/searchResult.jsp");
-        Set<Video> videos = transcriptService.search(search);
+
+        TranscriptSearchResult result = transcriptService.search(search);
+        Set<Video> videos = result.getVideos();
+        List<Transcript> transcripts = result.getTranscripts();
 
         for (Video video: videos) {            
             System.out.println(video.getTitle());
@@ -51,11 +57,13 @@ public class VideoController {
         
         mv.addObject("videos", videos);
 
+        mv.addObject("transcripts", transcripts);
+
         return mv;
     }
 
     @GetMapping("/video/{id}")
-    public ModelAndView getVideo(Principal principal, @PathVariable("id") String id){
+    public ModelAndView getVideo(Principal principal, @PathVariable("id") String id, @RequestParam(name = "start", required = false) String start ){
         ModelAndView mv = new ModelAndView("/viewVideo.jsp");
         Optional<Video> optionalVideo = videoDao.findById(id);
 
@@ -64,6 +72,14 @@ public class VideoController {
 
         mv.addObject("video", video);
         mv.addObject("tags", tags);
+
+        if (start != null) {
+            mv.addObject("start", start);
+        } else {
+            mv.addObject("start", "0");
+        }
+
+        mv.addObject("start", start);
 
         return mv;
     }

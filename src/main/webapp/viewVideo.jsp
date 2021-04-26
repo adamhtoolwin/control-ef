@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="nav" tagdir="/WEB-INF/tags" %>
 
 
@@ -22,6 +23,15 @@ pageEncoding="ISO-8859-1"%>
         border-radius: 20px;
         border-color: blue;
     }
+    div.scroll {
+        margin:4px, 4px;
+        padding:4px;
+        width: 500px;
+        height: 550px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        text-align:justify;
+    }
 </style>
 
   <nav:navbar>
@@ -29,11 +39,26 @@ pageEncoding="ISO-8859-1"%>
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <iframe width="780" height="550" src="https://www.youtube.com/embed/${video.id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                <iframe width="780" height="550" src="https://www.youtube.com/embed/${video.id}?start=${start}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
-            <div class="col-sm transcript-border">
+            <div class="col-sm transcript-border scroll">
                 <h4>Transcript</h4>
+                <c:forEach items="${video.transcripts}" var="transcript">
+                  <p>
+                    <c:set var="minutes" value="${(transcript.startTime / 1000) / 60}" />
+                    <c:set var="seconds" value="${(transcript.startTime / 1000) % 60}" />
+
+                    <c:set var="totalSeconds" value="${(transcript.startTime / 1000)}" />
+                    <fmt:parseNumber value="${totalSeconds}" var="parsed" type="number" integerOnly="true"/>
+                    
+                    <a href="/video/${video.id}?start=${parsed}">
+                      <fmt:parseNumber value="${minutes}" type="number" integerOnly="true"/>:
+                      <fmt:formatNumber value="${seconds}" minFractionDigits="0" maxFractionDigits="0"/>
+                    </a>
+                    <c:out value="${transcript.content}"/>
+                  </p>
+                </c:forEach>
             </div>
         </div>
 

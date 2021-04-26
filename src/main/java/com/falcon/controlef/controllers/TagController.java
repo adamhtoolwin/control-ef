@@ -24,7 +24,7 @@ public class TagController {
 
     @PostMapping("/videos/searchByTag")
     public ModelAndView searchByTag(Principal principal, @RequestParam("tag") int id) {
-        ModelAndView mv = new ModelAndView("/searchResult.jsp");
+        ModelAndView mv = new ModelAndView("/searchResultTag.jsp");
         Tag tag = tagDao.findById(id).get();
 
         List<Video> videos = videoDao.findByTags(tag);

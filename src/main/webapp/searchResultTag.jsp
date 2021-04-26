@@ -54,25 +54,10 @@ pageEncoding="ISO-8859-1"%>
             <div class="col-md-auto">
               <a href="/video/${video.id}"><img width="200" src="https://img.youtube.com/vi/${video.id}/1.jpg"></a>
             </div>
+
             <div class="col-sm">
-                <a href="/video/${video.id}"><h3><c:out value="${video.title}"/></h3></a>
-                <p>By <c:out value="${video.lecturer}"/></p>
-
-                <p>
-                  <c:set var="minutes" value="${(video.transcripts[0].startTime / 1000) / 60}" />
-                  <c:set var="seconds" value="${(video.transcripts[0].startTime / 1000) % 60}" />
-
-                  <c:set var="totalSeconds" value="${(video.transcripts[0].startTime / 1000)}" />
-                  <fmt:parseNumber value="${totalSeconds}" var="parsed" type="number" integerOnly="true"/>
-
-                  <a href="/video/${video.id}?start=${parsed}">
-                    <fmt:parseNumber value="${minutes}" type="number" integerOnly="true"/>:
-                    <fmt:formatNumber value="${seconds}" minFractionDigits="0" maxFractionDigits="0"/>
-                  </a>
-
-                  <c:out value="${video.transcripts[0].content}"/>
-                </p>
-                
+              <a href="/video/${video.id}"><h3><c:out value="${video.title}"/></h3></a>
+              <p>By <c:out value="${video.lecturer}"/></p>             
             </div>
           </div>
           <br>
