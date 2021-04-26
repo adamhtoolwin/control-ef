@@ -23,9 +23,9 @@ public class Transcript {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int startTime;
+    private float startTime;
 
-    private int endTime;
+    private float endTime;
 
     private String content;
 
