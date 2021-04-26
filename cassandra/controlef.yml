@@ -3,12 +3,8 @@ keyspace: transcript
 table: transcripts_by_content
 
 columnspec:
-  - name: start_time
-    size: uniform(0..10) 
-  - name: end_time
-    size: uniform(0..10) 
   - name: content
-    size: gaussian(100...500)
+    size: uniform(5..50)
   - name: video_id
     size: fixed(11)
 

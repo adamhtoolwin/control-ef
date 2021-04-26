@@ -51,6 +51,10 @@ Make sure to pull `postgres:10.16` from dockerhub and of course install Docker.
 
 - `docker run --name control-cassandra2 -d -p 4127:9042 --rm --network controlef -e CASSANDRA_SEEDS=control-cassandra cassandra:latest`
 
+### (Optional) Run a second node mounting localdir
+
+- `docker run --name control-cassandra2 -d -p 4127:9042 --rm --network controlef -v /home/corse/st120832/sad/data/cassandra2:/var/lib/cassandra -e CASSANDRA_SEEDS=control-cassandra -d cassandra:latest`
+
 ### Check container node status
 
 - `docker exec -it control-cassandra nodetool status`
