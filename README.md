@@ -29,7 +29,7 @@ Enter these commands in terminal on Linux. If Windows, then equivalent commands 
 # Table of Contents
 
 1. [Architecture](#architecture)
-2. [Implementation Details](#implementation-details)
+2. [Proposed Architecture](#proposed-Architecture)
 3. [Quality Attribute Analysis](#quality-attribute-analysis)
 4. [Team Responsibilites](#team-responsibilites)
 5. [Meeting Schedule](#meeting-schedule)
@@ -42,29 +42,31 @@ Enter these commands in terminal on Linux. If Windows, then equivalent commands 
 12. [Docker Integrations](#docker-integrations)
 13. [Apache Cassandra Stress Test](#apache-cassandra-stress-test)
 
-## Architecture
+## Architectural Patterns
 
 ![deployment](Documentation/images/control-ef-deployment.jpg)
 
 1. Model-view-controller (MVC)
-2. Microservices
-3. Service-oriented Architecture
+2. Service-oriented Architecture
+3. P2P(?)
 
-The ControlEF application will utilize the model-view-controller (MVC) architecture pattern in main as we will be using the MVC framework Spring Boot. The architecture regarding the YouTube and Transcription APIs will utilize microservices in the form of the aforementioned APIs themselves. It will also incorporate some best practices from service-oriented architecture (SOA).
+The ControlEF application will utilize the model-view-controller (MVC) architecture pattern in main as we will be using the MVC framework Spring Boot. The architecture regarding the YouTube and Transcription APIs will utilize microservices in the form of the aforementioned APIs themselves. It will also incorporate some best practices from service-oriented architecture (SOA). Proposed and test architecure uses P2P.
 
-## Implementation Details
+## Proposed Architecture
 
-TBD
+![deployment](Documentation/images/Architecture-OneServer.png)
+
+![deployment](Documentation/images/Architecture-MultiServer.png)
 
 ## Quality Attribute Analysis
 
 | Quality Attribute | Priority | Reason |
 | ----------- | ----------- | ----------- |
-| Availability | H | The platform's main purpose is to provide aid in the learning process, so it should be available as much as possible. It should not fail the student when he needs it. |
-| Performance | H | When a student is learning, it is important not to lose focus. So, the platform's search function should work as quickly as possible. |
+| **Availability** | H | The platform's main purpose is to provide aid in the learning process, so it should be available as much as possible. It should not fail the student when he needs it. |
+| **Performance** | H | When a student is learning, it is important not to lose focus. So, the platform's search function should work as quickly as possible. |
 | Portability | L | As the majority of quality studying is done in front of a desk, the software architecture should be designed for desktop computers (Windows PC, Mac OS). |
 | Security | M | The main function - searching - only retrieves data, which is not dangerous. But uploading and transcript editing should be done only by authorized personnel. The software should provide that. |
-| Scalability | H | As this platform is basically a database, any kind of expansion (most likely vertical) should be seamless and unnoticed by the user.
+| **Scalability** | H | As this platform is basically a database, any kind of expansion (most likely vertical) should be seamless and unnoticed by the user.
 | Testability | M | The functionality is quite simple and input methods are limited. The upload formats (video and audio) are also limited. The only functionality that should be tested thoroughly is the transcript generation. |
 
 ## Team Responsibilites
@@ -99,9 +101,9 @@ Tag Search ![0%](https://progress-bar.dev/100)
 
 Transcript Search ![0%](https://progress-bar.dev/100)
 
-YouTube Upload ![0%](https://progress-bar.dev/20)
+YouTube Upload ![0%](https://progress-bar.dev/20) :woozy_face:
 
-YouTube Transcripts ![0%](https://progress-bar.dev/10)
+YouTube Transcripts ![0%](https://progress-bar.dev/10) :woozy_face:
 
 Database ![0%](https://progress-bar.dev/100)
 
@@ -183,6 +185,12 @@ Other potential relationships:
 - Video-Comment: OnetoMany
 
 - Video-Tag: ManytoMany
+
+## Test Architecture
+
+![data](Documentation/images/Architecture-OneServerOnlyPostgres.png)
+
+![data](Documentation/images/Architecture-OneServerOnlyCassandra.png)
 
 ## Docker Integrations
 
