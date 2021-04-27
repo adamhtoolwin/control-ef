@@ -197,6 +197,10 @@ Other potential relationships:
 
 This contains on setting up all the containers for the experiment. Please see the [docker section](/docker) for more details.
 
+## Postgres Stress Testing - JMeter
+
+[This](/JMeter) contains the `jmx` file for JMeteer used in our stress test for postgres.
+
 ## Apache Cassandra Stress test
 
 This contains everything related to the `cassandra-stress` tool. Please see the [cassandra section](/cassandra) for more details.
