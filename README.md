@@ -216,7 +216,7 @@ This contains on setting up all the containers for the experiment. Please see th
 
 ## Postgres Stress Testing JMeter
 
-[This](/JMeter) contains the `jmx` file for JMeteer used in our stress test for postgres.
+[This](/JMeter) contains the `jmx` file for JMeter used in our stress test for postgres.
 
 ## Apache Cassandra Stress test
 
