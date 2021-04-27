@@ -14,6 +14,7 @@ A platform where students can search any word or phrase they are interested in, 
 
 ## Table of Contents
 
+1. [Documentation](#documentation)
 1. [Table of Contents](#Table-of-Contents)
 1. [Setting up the Database for Development](#Setting-up-the-Database-for-Development)
 1. [Architecture](#architecture)
@@ -38,9 +39,10 @@ All the documentation can be found in the [Documentation](/Documentation) folder
 
 1. [Kickoff](/Documentation/Kickoff)
 2. [Progress](/Documentation/Progress)
-3. [Final](/Documentation/Final)
+3. [Testing](/Documentation/Testing)
+4. [Final](/Documentation/Final)
 
-The [test results](/Documentation/TestResults) for Cassandra are also there.
+**NOTE: The PDFs in the Testing folder are basically the same as in the Final folder**. The [test results](/Documentation/TestResults) for Cassandra are also included.
 
 ## Setting up the Database for Development
 
