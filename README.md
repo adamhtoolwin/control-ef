@@ -39,7 +39,8 @@ Enter these commands in terminal on Linux. If Windows, then equivalent commands 
 9. [Design Pattern integration](#design-pattern-integration)
 10. [Security](#security)
 11. [Data Relationships](#data-relationships)
-12. [Docker Integrations](/docker)
+12. [Docker Integrations](#docker-integrations)
+13. [Apache Cassandra Stress Test](#apache-cassandra-stress-test)
 
 ## Architecture
 
@@ -94,6 +95,10 @@ Authentication ![0%](https://progress-bar.dev/100)
 
 YouTube Player ![0%](https://progress-bar.dev/100)
 
+Tag Search ![0%](https://progress-bar.dev/100)
+
+Transcript Search ![0%](https://progress-bar.dev/100)
+
 YouTube Upload ![0%](https://progress-bar.dev/20)
 
 YouTube Transcripts ![0%](https://progress-bar.dev/10)
@@ -102,7 +107,7 @@ Database ![0%](https://progress-bar.dev/100)
 
 PostgreSQL Experimental Setup ![0%](https://progress-bar.dev/100)
 
-Cassandra Experimental Setup ![0%](https://progress-bar.dev/0)
+Cassandra Experimental Setup ![0%](https://progress-bar.dev/100)
 
 ## Dependencies
 
@@ -178,5 +183,13 @@ Other potential relationships:
 - Video-Comment: OnetoMany
 
 - Video-Tag: ManytoMany
+
+## Docker Integrations
+
+This contains on setting up all the containers for the experiment. Please see the [docker section](/docker) for more details.
+
+## Apache Cassandra Stress test
+
+This contains everything related to the `cassandra-stress` tool. Please see the [cassandra section](/cassandra) for more details.
 
 ---
