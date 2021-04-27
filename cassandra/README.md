@@ -6,6 +6,8 @@
 
 ## Cassandra Stress Tool
 
+- The stress tool is found along with the main Apache Cassandra binaries distribution under `tools/bin/cassandra-stress`.
+
 ### Quickstart
 
 1. First make sure your cassandra cluster is up and running. Default port is `9042` but can be changed with `-port` option.
@@ -25,6 +27,7 @@
 ### Our experiment
 
 1. Insert desired `n` number of records.
-`./cassandra-stress user profile=controlef.yml n=100000 cl=ONE ops\(insert=1\) -rate threads=1 -graph file=test.html title=test revision=test1 -node localhost,localhost:4127 -pop seq=1..100000`
+`./cassandra-stress user profile=controlef.yml n=100000 cl=ONE ops\(insert=1\) -rate threads=1 -graph file=test.html title=test revision=test1 -node localhost,localhost:4127`
 
-2. Read incrementally using `-pop seq=1..m`. Each read test has 200 queries and is averaged.
+2. Read. Each read test has 200 queries and is averaged.
+`./cassandra-stress user profile=controlef.yml n=200 cl=ONE ops\(read1=1\) -rate threads=1 -graph file=test.html title=test revision=test1 -node localhost,localhost:4127,localhost:4128`
