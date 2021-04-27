@@ -1,21 +1,11 @@
-# Team Members
-
-1. Gleb Cirkov (122002)
-
-2. Fathima Shafana (121985)
-
-3. Htoo Lwin (Leader) (120832)
-
-# Project Topic
-
-## Ctrl+F (Control-ef)
-
-A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
+# Control-ef (Ctrl+F)
 
 ## Table of Contents
 
-1. [Documentation](#documentation)
 1. [Table of Contents](#Table-of-Contents)
+1. [Team Members](#team-members)
+1. [About the project](#about-the-project)
+1. [Documentation](#documentation)
 1. [Setting up the Database for Development](#Setting-up-the-Database-for-Development)
 1. [Architecture](#architecture)
 2. [Proposed Architecture](#proposed-Architecture)
@@ -32,6 +22,18 @@ A platform where students can search any word or phrase they are interested in, 
 12. [Docker Integrations](#docker-integrations)
 12. [Postgres Stress Testing Jmeter](#Postgres-Stress-Testing-Jmeter)
 13. [Apache Cassandra Stress Test](#apache-cassandra-stress-test)
+
+## Team Members
+
+1. Gleb Cirkov (122002)
+
+2. Fathima Shafana (121985)
+
+3. Htoo Lwin (Leader) (120832)
+
+## About the project
+
+A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
 
 ## Documentation
 
