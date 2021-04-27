@@ -102,9 +102,9 @@ Tag Search ![0%](https://progress-bar.dev/100)
 
 Transcript Search ![0%](https://progress-bar.dev/100)
 
-YouTube Upload ![0%](https://progress-bar.dev/20) :woozy_face:
+YouTube Upload ![0%](https://progress-bar.dev/20) :disappointed:
 
-YouTube Transcripts ![0%](https://progress-bar.dev/10) :woozy_face:
+YouTube Transcripts ![0%](https://progress-bar.dev/10) :disappointed:
 
 Database ![0%](https://progress-bar.dev/100)
 
