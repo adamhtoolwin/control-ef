@@ -41,6 +41,7 @@ Enter these commands in terminal on Linux. If Windows, then equivalent commands 
 11. [Data Relationships](#data-relationships)
 11. [Test Architecture](#test-architecture)
 12. [Docker Integrations](#docker-integrations)
+12. [Postgres Stress Testing Jmeter](#Postgres-Stress-Testing-Jmeter)
 13. [Apache Cassandra Stress Test](#apache-cassandra-stress-test)
 
 ## Architectural Patterns
@@ -197,7 +198,7 @@ Other potential relationships:
 
 This contains on setting up all the containers for the experiment. Please see the [docker section](/docker) for more details.
 
-## Postgres Stress Testing - JMeter
+## Postgres Stress Testing JMeter
 
 [This](/JMeter) contains the `jmx` file for JMeteer used in our stress test for postgres.
 
