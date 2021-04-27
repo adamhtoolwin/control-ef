@@ -12,22 +12,10 @@
 
 A platform where students can search any word or phrase they are interested in, and the search engine will retrieve video-lectures with exact timestamps when the phrase was said. The platform allows users to upload video and audio. After the upload, the platform generates a video specific transcript used for searching. The transcript may be edited by some users*.
 
-## Setting up the Database for Development
+## Table of Contents
 
-- Install postgreSQL
-
-Enter these commands in terminal on Linux. If Windows, then equivalent commands can be found:
-
-1. `sudo -u postgres createuser falcon`
-2. `sudo -u postgres createdb controlefdb -O "falcon"`
-3. `sudo -u postgres psql`
-  
-4. `psql=# alter user falcon with encrypted password '{PASSWORD}';`
-
-5. `psql=# grant all privileges on database controlefdb to falcon`
-
-# Table of Contents
-
+1. [Table of Contents](#Table-of-Contents)
+1. [Setting up the Database for Development](#Setting-up-the-Database-for-Development)
 1. [Architecture](#architecture)
 2. [Proposed Architecture](#proposed-Architecture)
 3. [Quality Attribute Analysis](#quality-attribute-analysis)
@@ -43,6 +31,30 @@ Enter these commands in terminal on Linux. If Windows, then equivalent commands 
 12. [Docker Integrations](#docker-integrations)
 12. [Postgres Stress Testing Jmeter](#Postgres-Stress-Testing-Jmeter)
 13. [Apache Cassandra Stress Test](#apache-cassandra-stress-test)
+
+## Documentation
+
+All the documentation can be found in the [Documentation](/Documentation) folder for every phase.
+
+1. [Kickoff](/Documentation/Kickoff)
+2. [Progress](/Documentation/Progress)
+3. [Final](/Documentation/Final)
+
+The [test results](/Documentation/TestResults) for Cassandra are also there.
+
+## Setting up the Database for Development
+
+- Install postgreSQL
+
+Enter these commands in terminal on Linux. If Windows, then equivalent commands can be found:
+
+1. `sudo -u postgres createuser falcon`
+2. `sudo -u postgres createdb controlefdb -O "falcon"`
+3. `sudo -u postgres psql`
+  
+4. `psql=# alter user falcon with encrypted password '{PASSWORD}';`
+
+5. `psql=# grant all privileges on database controlefdb to falcon`
 
 ## Architectural Patterns
 
