@@ -25,11 +25,9 @@
 
 ## Team Members
 
-1. Gleb Cirkov (122002)
+1. Fathima Shafana (121985)
 
-2. Fathima Shafana (121985)
-
-3. Htoo Lwin (Leader) (120832)
+2. Htoo Lwin (Leader) (120832)
 
 ## About the project
 
